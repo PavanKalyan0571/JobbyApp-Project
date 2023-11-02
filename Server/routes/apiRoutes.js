@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 //All Jobs
 router.get("/jobs", jwtAuth, async (req, res) => {
     const allJobs = await Jobs.find({});
-    console.log(allJobs);
+    // console.log(allJobs);
     res.json({ jobs: allJobs });
 })
 
@@ -39,7 +39,7 @@ router.get("/filterjobs", jwtAuth, async (req, res) => {
 
         const filteredJobs = await Jobs.find(query)
 
-        if (filteredJobs.length === 0) {
+        if (filteredJobs?.length === 0) {
             return res.status(404).json({ messeage: "No Jobs Found" })
         }
         return res.json(filteredJobs);

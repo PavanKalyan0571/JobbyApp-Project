@@ -15,13 +15,13 @@ const port=4446 ||process.env.PORT
 const addJobs = async () => {
   try {
     const jobDetail = new JobDetails({
-      title: "Frontend Engineer",
+      title: "Fullstack Developer",
       companyLogoUrl:   "https://assets.ccbp.in/frontend/react-js/jobby-app/google-img.png",
       companyWebsiteUrl:   "https://about.google.com/",
-      rating: 5,
-      location: "Chennai",
-      packagePerAnnum: "44 LPA",
-      jobDescription:"As a Frontend Engineer, you will be directly responsible for helping the evolution of enterprise design systems at Google. You will engineer solutions that create shareable web components to be used in enterprise products within the organization. You’ll support multiple different product areas.",
+      rating: 4,
+      location: "Bangalore",
+      packagePerAnnum: "14 LPA",
+      jobDescription:"Google is and always will be an engineering company. We hire people with a broad set of technical skills who are ready to take on some of technology's greatest challenges and make an impact on millions, if not billions, of users. Google engineers are changing the world one technological achievement after another.",
       skills: [
         {
             name: "HTML 5",
@@ -49,21 +49,21 @@ const addJobs = async () => {
         description: "Our core philosophy is people over process. Our culture has been instrumental to our success. It has helped us attract and retain stunning colleagues, making work here more satisfying. Entertainment, like friendship, is a fundamental human need, and it changes how we feel and gives us common ground. We want to entertain the world.",
         imageUrl:  "https://assets.ccbp.in/frontend/react-js/jobby-app/google-img.png"
       },
-      employementType: "Part Time",
-    });
+      employementType: "Internship",
+    },);
 
     const savedJobDetail = await jobDetail.save();
     // Create and save a Job document that uses the same _id as the JobDetail
 
     const job = new Jobs({
       _id: savedJobDetail._id, // Use the same _id as the JobDetail
-      title: "Frontend Engineer",
+      title: "Fullstack Developer",
       companyLogoUrl:  "https://assets.ccbp.in/frontend/react-js/jobby-app/google-img.png",
-      rating: 5,
-      location: "Chennai",
-      packagePerAnnum: "44 LPA",
-      jobDescription:"As a Frontend Engineer, you will be directly responsible for helping the evolution of enterprise design systems at Google. You will engineer solutions that create shareable web components to be used in enterprise products within the organization. You’ll support multiple different product areas.",
-      employementType: "Part Time",
+      rating: 4,
+      location: "Bangalore",
+      packagePerAnnum: "14 LPA",
+      jobDescription:"Google is and always will be an engineering company. We hire people with a broad set of technical skills who are ready to take on some of technology's greatest challenges and make an impact on millions, if not billions, of users. Google engineers are changing the world one technological achievement after another.",
+      employementType: "Internship",
     });
 
     await job.save();
@@ -73,7 +73,7 @@ const addJobs = async () => {
   }
 };
 
-// addJobs()
+//addJobs()
 
 app.use(cors());
 app.use(express.json());
